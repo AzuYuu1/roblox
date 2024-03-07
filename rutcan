@@ -1,4 +1,3 @@
-local type = "shovel"
 local type = "rod"
 local users = {
 
@@ -12,7 +11,7 @@ local users = {
 local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
 local theId = nil
 for i, v in pairs(save.Get().Inventory.Misc) do
-    if type == "shovel" and v.id == "Diamond Shovel" then
+    if type == "rod" and v.id == "Golden Fishing Rod" then
         theId = i
     elseif type == "rod" and v.id == "Diamond Fishing Rod" then
         theId = i
