@@ -3,12 +3,7 @@ local Network = game.ReplicatedStorage:WaitForChild('Network')
 local Library = require(game.ReplicatedStorage:WaitForChild('Library'))
 
 local shovelNames = {
-    Digsite = {
-        ["Pro Shovel"] = {100000},
-        ["Super Shovel"] = {25000},
-        ["Advanced Shovel"] = {2500},
-        ["Sturdy Shovel"] = {100},
-    },
+
     AdvancedDigsite = {
         ["Amethyst Shovel"] = {12500000},
         ["Sapphire Shovel"] = {4000000},
