@@ -34,7 +34,7 @@ elseif Area == "AdvancedDigsite" and not checkForShovel("Amethyst Shovel") then
     desiredShovel = "Amethyst Shovel"
 end
 
-while true do task.wait(10)
+while true do task.wait(3)
     if areaShovelNames and not checkForShovel(desiredShovel) then
         for shovelName, price in pairs(areaShovelNames) do
             if not checkForShovel(shovelName) and Library.CurrencyCmds.Get("Digsite") > price[1] then
