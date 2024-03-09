@@ -36,7 +36,7 @@ elseif Area == "AdvancedFishing" and not checkForRod("Amethyst Fishing Rod") the
     desiredRod = "Amethyst Fishing Rod"
 end
 
-while true do task.wait(10)
+while true do task.wait(3)
     if areaRodNames and not checkForRod(desiredRod) then
         for rodName, price in pairs(areaRodNames) do
             if not checkForRod(rodName) and Library.CurrencyCmds.Get("Fishing") > price[1] then
