@@ -1,7 +1,3 @@
-repeat
-    task.wait()
-until game:IsLoaded()
-
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
 Terrain.WaterReflectance = 0
@@ -60,7 +56,7 @@ Workspace.DescendantAdded:Connect(function(v)
 end)
 
 _G.loop = true
-_G.loopDelay = 30
+_G.loopDelay = 15
 while _G.loop do
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBall_Consume"):InvokeServer()
 task.wait(0.5)
