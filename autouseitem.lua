@@ -91,7 +91,7 @@ end
 
 --auto use fruits, postion
 _G.loop = true
-_G.loopDelay = 15
+_G.loopDelay = 5
 while _G.loop do
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("69c7fbeed3524224aaabeb54e3b2e1ee",2)
 task.wait(0.5)
@@ -116,7 +116,7 @@ end
 task.wait(3.5)
 --fluxus
 _G.loop = true
-_G.loopDelay = 15
+_G.loopDelay = 5
 while _G.loop do
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("6d8605ac7bda42508ba13fcf9893dbf7")
 task.wait(0.5)
