@@ -57,5 +57,4 @@ while true do task.wait(10)
 end
 
 task.wait(120)
-
 game:GetService("RunService"):Set3dRenderingEnabled(false)
