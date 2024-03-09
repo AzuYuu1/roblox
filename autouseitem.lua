@@ -58,8 +58,6 @@ end
 Workspace.DescendantAdded:Connect(function(v)
     clearTextures(v)
 end)
-task.wait(1)
-game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 _G.loop = true
 _G.loopDelay = 30
