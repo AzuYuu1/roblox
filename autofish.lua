@@ -6,7 +6,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.wor
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer("Fishing", "ClaimRod",Vector3.new(1139, 75, -3445))
 
-task.wait(150)
+task.wait(1800)
 
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 local Network = game.ReplicatedStorage:WaitForChild('Network')
