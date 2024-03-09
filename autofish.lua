@@ -2,12 +2,15 @@
 
 --teleport
 repeat task.wait() until game:IsLoaded() task.wait(1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Fishing.Teleports.Enter.CFrame.Position) task.wait(15)
-
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Fishing.Teleports.Enter.CFrame.Position)
+task.wait(15)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer("Fishing", "ClaimRod",Vector3.new(1139, 75, -3445))
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Fishing.Teleports.Leave.CFrame.Position) 
+repeat task.wait() until game:IsLoaded()
+task.wait(0.5)
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Teleports_RequestTeleport"):InvokeServer("Spawn")
 
 task.wait(1800)
-
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 local Network = game.ReplicatedStorage:WaitForChild('Network')
 local Library = require(game.ReplicatedStorage:WaitForChild('Library'))
