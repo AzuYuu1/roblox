@@ -37,7 +37,13 @@ task.wait(3.5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("b854636485bc46c69e07108ed2c99194",20)
 task.wait(0.5)
 --codex
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",20)
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
+task.wait(0.5)
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
+task.wait(0.5)
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
+task.wait(0.5)
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
 
 task.wait(3.5)
 --fluxus
