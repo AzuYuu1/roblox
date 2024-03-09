@@ -90,9 +90,10 @@ game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Squea
 
 
 --auto use fruits, postion
-task.wait(3.5)
---game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("69c7fbeed3524224aaabeb54e3b2e1ee",2)
---game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("9fb26a7a409f4965b18d88b3d78651d2",2)
+repeat task.wait() until game:IsLoaded()
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("69c7fbeed3524224aaabeb54e3b2e1ee",2)
+task.wait(0.5)
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("9fb26a7a409f4965b18d88b3d78651d2",2)
 --fluxus
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("b854636485bc46c69e07108ed2c99194",20)
 task.wait(0.5)
