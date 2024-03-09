@@ -1,14 +1,11 @@
 
 
 --teleport
-repeat task.wait() until game:IsLoaded() task.wait(2)
+repeat task.wait() until game:IsLoaded() task.wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Fishing.Teleports.Enter.CFrame.Position) task.wait(3.5)
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer("Fishing", "ClaimRod",Vector3.new(1139, 75, -3445)) task.wait(5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Fishing.Teleports.Leave.CFrame.Position) task.wait(15)
-
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.AdvancedFishing.Teleports.Enter.CFrame.Position) task.wait(5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer("AdvancedFishing","RequestCast",Vector3.new(1460, 61, -4442))
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Fishing.Teleports.Leave.CFrame.Position) 
 
 task.wait(100)
 
