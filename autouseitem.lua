@@ -1,3 +1,5 @@
+task.wait(1)
+game:GetService("RunService"):Set3dRenderingEnabled(false)
 task.wait(0.5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Mailbox: Get"):InvokeServer()
 task.wait(0.5)
