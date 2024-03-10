@@ -1,6 +1,5 @@
 _G.loop = true
 _G.loopDelay = 5
-while _G.loop do
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 local Network = game.ReplicatedStorage:WaitForChild('Network')
 local Library = require(game.ReplicatedStorage:WaitForChild('Library'))
@@ -25,7 +24,7 @@ function checkForRod(rodName)
     end
     return false
 end
-
+while _G.loop do
 function buyRod(rodName) return Network:WaitForChild("FishingMerchant_PurchaseRod"):InvokeServer(rodName) end
 
 local Area = tostring(getActive())
