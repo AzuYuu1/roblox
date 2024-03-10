@@ -1,5 +1,5 @@
 _G.loop = true
-_G.loopDelay = 25
+_G.loopDelay = 15
 while _G.loop do
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 local Network = game.ReplicatedStorage:WaitForChild('Network')
