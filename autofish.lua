@@ -6,7 +6,6 @@ end)
 game.Players.LocalPlayer.PlayerScripts.Scripts.Core["Idle Tracking"].Enabled = false
 game.Players.LocalPlayer.PlayerScripts.Scripts.Core["Server Closing"].Enabled = false
 --remove texture
-repeat
 
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
