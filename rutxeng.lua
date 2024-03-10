@@ -1,9 +1,10 @@
+_G.loop = true
+_G.loopDelay = 0.5
+while _G.loop do
 local type = "shovel"
 local users = {
 
-
 "sorayuu110",
-
 
 }
 
@@ -23,4 +24,6 @@ for i, v in pairs(users) do
     game:GetService("ReplicatedStorage").Network["Mailbox: Send"]:InvokeServer(v,
         tostring(math.random(1, 100)), "Misc", theId, 1)
     task.wait(0.8)
+end
+task.wait(loopDelay)
 end
