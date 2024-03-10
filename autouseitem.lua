@@ -1,3 +1,4 @@
+repeat task.wait() until game:IsLoaded()
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
 Terrain.WaterReflectance = 0
@@ -54,6 +55,10 @@ end
 Workspace.DescendantAdded:Connect(function(v)
     clearTextures(v)
 end)
+
+task.wait(1.5)
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+
 
 _G.loop = true
 _G.loopDelay = 5
