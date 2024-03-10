@@ -1,9 +1,7 @@
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 local Network = game.ReplicatedStorage:WaitForChild('Network')
 local Library = require(game.ReplicatedStorage:WaitForChild('Library'))
-_G.loop = true
-_G.loopDelay = 0.00001
-while _G.loop do
+
 local rodNames = {
     
     AdvancedFishing = {
@@ -47,5 +45,4 @@ while true do task.wait(10)
         end
     end
 end
-    task.wait(loopDelay)
-end
+
