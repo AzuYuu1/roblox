@@ -1,3 +1,5 @@
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+task.wait(1)
 local virtualuser = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:Connect(function()
     virtualuser:CaptureController()
