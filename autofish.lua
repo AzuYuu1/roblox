@@ -66,12 +66,12 @@ end
 Workspace.DescendantAdded:Connect(function(v)
     clearTextures(v)
 end)
-
+task.wait(15)
 --teleport
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Fishing.Teleports.Enter.CFrame.Position)
 task.wait(5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer("Fishing", "ClaimRod",Vector3.new(1139, 75, -3445))
-task.wait(40)
+task.wait(25)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Fishing.Teleports.Leave.CFrame.Position)
 task.wait(1)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_PlayerLeaveInstance"):FireServer("Fishing")
