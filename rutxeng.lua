@@ -14,8 +14,8 @@ local theId = nil
 for i, v in pairs(save.Get().Inventory.Misc) do
     if type == "shovel" and v.id == "Diamond Shovel" then
         theId = i
-    --elseif type == "shovel" and v.id == "Golden Shovel" then
-        --theId = i
+    elseif type == "shovel" and v.id == "Golden Shovel" then
+        theId = i
      end
 end
 
