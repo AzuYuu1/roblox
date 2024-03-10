@@ -1,14 +1,12 @@
-_G.loop = true
-_G.loopDelay = 5
-while _G.loop do
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 local Network = game.ReplicatedStorage:WaitForChild('Network')
 local Library = require(game.ReplicatedStorage:WaitForChild('Library'))
-
+_G.loop = true
+_G.loopDelay = 0.00001
+while _G.loop do
 local rodNames = {
-
+    
     AdvancedFishing = {
-
         ["Amethyst Fishing Rod"] = {2250000},
 
     },
@@ -39,7 +37,7 @@ elseif Area == "AdvancedFishing" and not checkForRod("Amethyst Fishing Rod") the
     desiredRod = "Amethyst Fishing Rod"
 end
 
-while true do task.wait(3)
+while true do task.wait(10)
     if areaRodNames and not checkForRod(desiredRod) then
         for rodName, price in pairs(areaRodNames) do
             if not checkForRod(rodName) and Library.CurrencyCmds.Get("Fishing") > price[1] then
