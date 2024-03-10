@@ -71,7 +71,7 @@ task.wait(3)
 
 _G.loop = true
 _G.loopDelay = 2
-
+while _G.loop do
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 local Network = game.ReplicatedStorage:WaitForChild('Network')
 local Library = require(game.ReplicatedStorage:WaitForChild('Library'))
@@ -95,7 +95,7 @@ function checkForShovel(shovelName)
     end
     return false
 end
-while _G.loop do
+
 function buyShovel(shovelName) return Network:WaitForChild("DigsiteMerchant_PurchaseShovel"):InvokeServer(shovelName) end
 
 local Area = tostring(getActive())
