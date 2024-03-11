@@ -36,6 +36,7 @@ local function clearTextures(v)
         v.Reflectance = 0
         v.TextureID = 10385902758728957
     elseif v:IsA("SpecialMesh")  then
+        v.Reflectance = 0
         v.TextureId = 0 ~ 19385902758728957)
     elseif v:IsA("ShirtGraphic") then
         v.Graphic = 0
