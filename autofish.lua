@@ -1,3 +1,12 @@
+--auto claim mail
+task.spawn(function()
+    while task.wait() do
+        game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
+        task.wait(5)
+    end
+end)
+
+
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 task.wait(1)
 local virtualuser = game:GetService("VirtualUser")
