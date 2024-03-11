@@ -68,9 +68,8 @@ task.wait(1.5)
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 
-_G.loop = true
-_G.loopDelay = 5
-while _G.loop do
+task.spawn(function()
+    while task.wait() do
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBall_Consume"):InvokeServer()
 task.wait(0.5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBone_Consume"):InvokeServer()
@@ -163,5 +162,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Encha
 --use coin flag for codex
 task.wait(5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Flags: Consume"):InvokeServer("Coins Flag","a1b47d1d9f28407db7d5b19a1d71d438")
-    task.wait(loopDelay)
-end
+ task.wait(1)
+    end
+end)
+            
