@@ -166,7 +166,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Encha
 --use coin flag for codex
 task.wait(5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Flags: Consume"):InvokeServer("Coins Flag","a1b47d1d9f28407db7d5b19a1d71d438")
- task.wait(1)
+ task.wait(10)
     end
 end)
             
