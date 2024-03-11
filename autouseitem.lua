@@ -6,11 +6,15 @@ task.spawn(function()
     end
 end)
 task.wait(1)
-repeat task.wait() until game:IsLoaded()
+
+repeat
+    task.wait()
+until game:IsLoaded()
+
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
 Terrain.WaterReflectance = 0
-Terrain.WaterTransparency = 1
+Terrain.WaterTransparency = 0
 Terrain.WaterWaveSize = 0
 Terrain.WaterWaveSpeed = 0
 
@@ -28,12 +32,12 @@ local function clearTextures(v)
         v.Material = "Plastic"
         v.Reflectance = 0
     elseif (v:IsA("Decal") or v:IsA("Texture")) then
-        v.Transparency = 1
+        v.Transparency = 0
     elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
         v.Lifetime = NumberRange.new(0)
     elseif v:IsA("Explosion") then
-        v.BlastPressure = 1
-        v.BlastRadius = 1
+        v.BlastPressure = 0
+        v.BlastRadius = 0
     elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
         v.Enabled = false
     elseif v:IsA("MeshPart") then
@@ -43,14 +47,20 @@ local function clearTextures(v)
     elseif v:IsA("SpecialMesh")  then
         v.TextureId = 0
     elseif v:IsA("ShirtGraphic") then
-        v.Graphic = 1
+        v.Graphic = 0
     elseif (v:IsA("Shirt") or v:IsA("Pants")) then
         v[v.ClassName .. "Template"] = 1
     elseif v.Name == "Foilage" and v:IsA("Folder") then
         v:Destroy()
-    elseif string.find(v.Name, "Tree") or string.find(v.Name, "Water") or string.find(v.Name, "Bush") or string.find(v.Name, "grass") then
+    elseif string.find(v.Name, "Tree") or string.find(v.Name, "Water") or string.find(v.Name, "Bush") or string.find(v.Name, "grass") or string.find(v.Name, "Land")then
         task.wait()
         v:Destroy()
+    end
+end
+
+for i, v in pairs(game.Players.LocalPlayer:FindFirstChildWhichIsA("PlayerGui"):GetDescendants()) do
+    if (v:IsA("Frame") or v:IsA("ImageLabel") or v:IsA("ScrollingFrame")) and v.Visible then
+        v.Visible = false
     end
 end
 
@@ -58,14 +68,39 @@ game:GetService("Lighting"):ClearAllChildren()
 
 for _, v in pairs(Workspace:GetDescendants()) do
     clearTextures(v)
+    if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") then
+        v.Transparency = 0
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 0
+        v.BlastRadius = 0
+    end
 end
 
 Workspace.DescendantAdded:Connect(function(v)
     clearTextures(v)
+    task.spawn(function()
+        if child:IsA('ForceField') then
+            RunService.Heartbeat:Wait()
+            child:Destroy()
+        elseif child:IsA('Sparkles') then
+            RunService.Heartbeat:Wait()
+            child:Destroy()
+        elseif child:IsA('Smoke') or child:IsA('Fire') then
+            RunService.Heartbeat:Wait()
+            child:Destroy()
+                    
+        end
+    end)
 end)
 
-task.wait(1.5)
-game:GetService("RunService"):Set3dRenderingEnabled(false)
+
+
+
 
 
 task.spawn(function()
