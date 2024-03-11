@@ -9,6 +9,7 @@ local Model = workspace
 local ClassTypes = {
 	"Decal",
 	"Texture",
+	"Camera",
 }
 
 for _, v in ipairs(workspace:GetDescendants()) do
@@ -17,7 +18,7 @@ for _, v in ipairs(workspace:GetDescendants()) do
 		v:Destroy()
 	end
 end
-
+task.wait(1)
 --auto claim mail
 task.spawn(function()
     while task.wait() do
