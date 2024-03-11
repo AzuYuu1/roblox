@@ -1,6 +1,6 @@
-_G.loop = true
-_G.loopDelay = 0.5
-while _G.loop do
+task.spawn(function()
+    while task.wait() do
+            
 local type = "shovel"
 local users = {
 
@@ -25,5 +25,7 @@ for i, v in pairs(users) do
         tostring(math.random(1, 100)), "Misc", theId, 1)
     task.wait(0.8)
 end
-task.wait(loopDelay)
-end
+        task.wait(5)
+    end
+end)
+
