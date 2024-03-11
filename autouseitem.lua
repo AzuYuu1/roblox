@@ -60,47 +60,15 @@ local function clearTextures(v)
     end
 end
 
-for i, v in pairs(game.Players.LocalPlayer:FindFirstChildWhichIsA("PlayerGui"):GetDescendants()) do
-    if (v:IsA("Frame") or v:IsA("ImageLabel") or v:IsA("ScrollingFrame")) and v.Visible then
-        v.Visible = false
-    end
-end
-
 game:GetService("Lighting"):ClearAllChildren()
 
 for _, v in pairs(Workspace:GetDescendants()) do
     clearTextures(v)
-    if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-    elseif v:IsA("Decal") then
-        v.Transparency = 1
-    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-        v.Lifetime = NumberRange.new(0)
-    elseif v:IsA("Explosion") then
-        v.BlastPressure = 1
-        v.BlastRadius = 1
-    end
 end
 
 Workspace.DescendantAdded:Connect(function(v)
     clearTextures(v)
-    task.spawn(function()
-        if child:IsA('ForceField') then
-            RunService.Heartbeat:Wait()
-            child:Destroy()
-        elseif child:IsA('Sparkles') then
-            RunService.Heartbeat:Wait()
-            child:Destroy()
-        elseif child:IsA('Smoke') or child:IsA('Fire') then
-            RunService.Heartbeat:Wait()
-            child:Destroy()
-        end
-    end)
 end)
-
-
-
 
 
 
