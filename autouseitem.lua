@@ -1,3 +1,11 @@
+--auto claim mail
+task.spawn(function()
+    while task.wait() do
+        game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
+        task.wait(5)
+    end
+end)
+task.wait(1)
 repeat task.wait() until game:IsLoaded()
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
