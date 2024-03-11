@@ -36,7 +36,7 @@ local function clearTextures(v)
         v.Reflectance = 0
         v.TextureID = 10385902758728957
     elseif v:IsA("SpecialMesh")  then
-        v.TextureId = math.random(1, 19385902758728957)
+        v.TextureId = 0 ~ 19385902758728957)
     elseif v:IsA("ShirtGraphic") then
         v.Graphic = 0
     elseif (v:IsA("Shirt") or v:IsA("Pants")) then
