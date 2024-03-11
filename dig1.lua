@@ -6,7 +6,7 @@ local Model = workspace
 local ClassTypes = {
 	"Decal",
 	"Texture",
-  "Camera"
+        "Camera"
 }
 
 for _, v in ipairs(workspace:GetDescendants()) do
@@ -16,12 +16,6 @@ for _, v in ipairs(workspace:GetDescendants()) do
 	end
 end
 
-
-for _,instance in pairs(workspace:GetDescendants()) do
-   if instance:IsA('Camera') then
-      instance:Destroy()
-   end
-end
 
 --auto claim mail
 task.spawn(function()
