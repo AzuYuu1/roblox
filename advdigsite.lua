@@ -1,4 +1,21 @@
 game:GetService("RunService"):Set3dRenderingEnabled(false)
+repeat
+    task.wait()
+until game:IsLoaded()
+
+local Model = workspace
+local ClassTypes = {
+	"Decal",
+	"Texture",
+    "Camera"
+}
+
+for _, v in ipairs(workspace:GetDescendants()) do
+	if table.find(ClassTypes, v.ClassName) then
+		print(v.ClassName)
+		v:Destroy()
+	end
+end
 
 --auto claim mail
 task.spawn(function()
@@ -8,9 +25,9 @@ task.spawn(function()
     end
 end)
 
-tasl.wait(1)
+tasl.wait(2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Digsite.Teleports.Enter.CFrame.Position)
-task.wait(5)
+task.wait(15)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer("Digsite", "ClaimShovel")
 task.wait(10)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Digsite.Teleports.Leave.CFrame.Position)
