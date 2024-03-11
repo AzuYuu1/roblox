@@ -1,6 +1,6 @@
-_G.loop = true
-_G.loopDelay = 20
-while _G.loop do
+task.spawn(function()
+    while task.wait() do
+            
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 local Network = game.ReplicatedStorage:WaitForChild('Network')
 local Library = require(game.ReplicatedStorage:WaitForChild('Library'))
@@ -47,5 +47,6 @@ while true do task.wait(3)
         end
     end
 end
-task.wait(loopDelay)
-end
+        task.wait(5)
+    end
+end)
