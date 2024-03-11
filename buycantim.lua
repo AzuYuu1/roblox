@@ -46,6 +46,6 @@ while true do task.wait(10)
         end
     end
 end
-
+task.wait(5)
     end
 end)
