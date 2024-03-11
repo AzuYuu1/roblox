@@ -122,31 +122,43 @@ game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruit
 task.wait(3.5)
 --fluxus
 
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("6d8605ac7bda42508ba13fcf9893dbf7")
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("36b2906ccac548a48536f3fdca803bdc")
-task.wait(0.5)
---codex
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("d35c953fa68a441da7b40f560a00bedb",5)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("993d741352e8418d8dd58b1da6d3198c",5)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("d35c953fa68a441da7b40f560a00bedb",5)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("993d741352e8418d8dd58b1da6d3198c",5)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("d35c953fa68a441da7b40f560a00bedb",5)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("993d741352e8418d8dd58b1da6d3198c",5)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("d35c953fa68a441da7b40f560a00bedb",5)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Potions: Consume"):FireServer("993d741352e8418d8dd58b1da6d3198c",5)
+getgenv().autoMisc = {
+    autoPotion = true,
+    potionConfig = {
 
+        {Name = "Coins", Tier =  6},
+        {Name = "Damage", Tier = 5},
+
+    },
+    
+    }
+
+local Library = require(game.ReplicatedStorage.Library)
+local saveMod = require(game.ReplicatedStorage.Library.Client.Save)
+function getInfo(name) return saveMod.Get()[name] end 
+
+function getUID(Class, Name, Tier)
+    for i,v in pairs(getInfo("Inventory")[Class]) do
+        if v.id == Name and v.tn == Tier then
+            return i
+        end
+    end
+end
+
+while getgenv().autoMisc.autoPotion do
+    for _,potion in pairs(getgenv().autoMisc.potionConfig) do
+        local PotId = getUID("Potion", potion.Name, potion.Tier)
+        if PotId then
+            Library.Network.Fire("Potions: Consume", PotId)
+        end
+        task.wait(0.5)
+    end
+    task.wait(getgenv().autoMisc.potionCooldown)
+end
 
 
 --mang sach coin 7
-task.wait(0.3)
+task.wait(1)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("7a2dd835a20340a89a46ed200e6aa2e2")
 task.wait(0.3)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("7a2dd835a20340a89a46ed200e6aa2e2")
