@@ -14,7 +14,7 @@ until game:IsLoaded()
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
 Terrain.WaterReflectance = 0
-Terrain.WaterTransparency = 0
+Terrain.WaterTransparency = 1
 Terrain.WaterWaveSize = 0
 Terrain.WaterWaveSpeed = 0
 
@@ -32,12 +32,12 @@ local function clearTextures(v)
         v.Material = "Plastic"
         v.Reflectance = 0
     elseif (v:IsA("Decal") or v:IsA("Texture")) then
-        v.Transparency = 0
+        v.Transparency = 1
     elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
         v.Lifetime = NumberRange.new(0)
     elseif v:IsA("Explosion") then
-        v.BlastPressure = 0
-        v.BlastRadius = 0
+        v.BlastPressure = 1
+        v.BlastRadius = 1
     elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
         v.Enabled = false
     elseif v:IsA("MeshPart") then
@@ -47,12 +47,12 @@ local function clearTextures(v)
     elseif v:IsA("SpecialMesh")  then
         v.TextureId = 0
     elseif v:IsA("ShirtGraphic") then
-        v.Graphic = 0
+        v.Graphic = 1
     elseif (v:IsA("Shirt") or v:IsA("Pants")) then
         v[v.ClassName .. "Template"] = 1
     elseif v.Name == "Foilage" and v:IsA("Folder") then
         v:Destroy()
-    elseif string.find(v.Name, "Tree") or string.find(v.Name, "Water") or string.find(v.Name, "Bush") or string.find(v.Name, "grass") or string.find(v.Name, "Land")then
+    elseif string.find(v.Name, "Tree") or string.find(v.Name, "Water") or string.find(v.Name, "Bush") or string.find(v.Name, "grass") then
         task.wait()
         v:Destroy()
     end
@@ -72,12 +72,12 @@ for _, v in pairs(Workspace:GetDescendants()) do
         v.Material = "Plastic"
         v.Reflectance = 0
     elseif v:IsA("Decal") then
-        v.Transparency = 0
+        v.Transparency = 1
     elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
         v.Lifetime = NumberRange.new(0)
     elseif v:IsA("Explosion") then
-        v.BlastPressure = 0
-        v.BlastRadius = 0
+        v.BlastPressure = 1
+        v.BlastRadius = 1
     end
 end
 
@@ -93,7 +93,6 @@ Workspace.DescendantAdded:Connect(function(v)
         elseif child:IsA('Smoke') or child:IsA('Fire') then
             RunService.Heartbeat:Wait()
             child:Destroy()
-                    
         end
     end)
 end)
