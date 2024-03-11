@@ -1,4 +1,6 @@
+
 game:GetService("RunService"):Set3dRenderingEnabled(false)
+task.wait(1.5)
 repeat
     task.wait()
 until game:IsLoaded()
