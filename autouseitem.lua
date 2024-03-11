@@ -7,6 +7,8 @@ task.spawn(function()
 end)
 task.wait(1)
 
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+
 repeat
     task.wait()
 until game:IsLoaded()
