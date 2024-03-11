@@ -28,7 +28,7 @@ task.wait(0.5)
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 task.wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Digsite.Teleports.Enter.CFrame.Position)
-task.wait(5)
+task.wait(10)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer("Digsite", "ClaimShovel")
 task.wait(15)
 
