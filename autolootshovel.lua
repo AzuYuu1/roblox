@@ -1,9 +1,22 @@
+--auto claim mail
+task.spawn(function()
+    while task.wait() do
+        game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
+        task.wait(5)
+    end
+end)
+
+
 --remove texture
+
+repeat
+    task.wait()
+until game:IsLoaded()
 
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
 Terrain.WaterReflectance = 0
-Terrain.WaterTransparency = 0
+Terrain.WaterTransparency = 1
 Terrain.WaterWaveSize = 0
 Terrain.WaterWaveSpeed = 0
 
@@ -21,12 +34,12 @@ local function clearTextures(v)
         v.Material = "Plastic"
         v.Reflectance = 0
     elseif (v:IsA("Decal") or v:IsA("Texture")) then
-        v.Transparency = 0
+        v.Transparency = 1
     elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
         v.Lifetime = NumberRange.new(0)
     elseif v:IsA("Explosion") then
-        v.BlastPressure = 0
-        v.BlastRadius = 0
+        v.BlastPressure = 1
+        v.BlastRadius = 1
     elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
         v.Enabled = false
     elseif v:IsA("MeshPart") then
@@ -38,7 +51,7 @@ local function clearTextures(v)
     elseif v:IsA("ShirtGraphic") then
         v.Graphic = 1
     elseif (v:IsA("Shirt") or v:IsA("Pants")) then
-        v[v.ClassName .. "Template"] = 0
+        v[v.ClassName .. "Template"] = 1
     elseif v.Name == "Foilage" and v:IsA("Folder") then
         v:Destroy()
     elseif string.find(v.Name, "Tree") or string.find(v.Name, "Water") or string.find(v.Name, "Bush") or string.find(v.Name, "grass") then
@@ -47,31 +60,47 @@ local function clearTextures(v)
     end
 end
 
+for i, v in pairs(game.Players.LocalPlayer:FindFirstChildWhichIsA("PlayerGui"):GetDescendants()) do
+    if (v:IsA("Frame") or v:IsA("ImageLabel") or v:IsA("ScrollingFrame")) and v.Visible then
+        v.Visible = false
+    end
+end
+
 game:GetService("Lighting"):ClearAllChildren()
 
 for _, v in pairs(Workspace:GetDescendants()) do
     clearTextures(v)
+    if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    end
 end
 
 Workspace.DescendantAdded:Connect(function(v)
     clearTextures(v)
+    task.spawn(function()
+        if child:IsA('ForceField') then
+            RunService.Heartbeat:Wait()
+            child:Destroy()
+        elseif child:IsA('Sparkles') then
+            RunService.Heartbeat:Wait()
+            child:Destroy()
+        elseif child:IsA('Smoke') or child:IsA('Fire') then
+            RunService.Heartbeat:Wait()
+            child:Destroy()
+        end
+    end)
 end)
-task.wait(30)
---teleport
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Digsite.Teleports.Enter.CFrame.Position)
-task.wait(35)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer("Digsite", "ClaimShovel")
-task.wait(15)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Digsite.Teleports.Leave.CFrame.Position)
-task.wait(1)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_PlayerLeaveInstance"):FireServer("Digsite")
-task.wait(120)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.AdvancedDigsite.Teleports.Enter.CFrame.Position)
-task.wait(3)
 
-_G.loop = true
-_G.loopDelay = 2
-while _G.loop do
+task.spawn(function()
+    while task.wait() do
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save).Get()
 local Network = game.ReplicatedStorage:WaitForChild('Network')
 local Library = require(game.ReplicatedStorage:WaitForChild('Library'))
@@ -118,5 +147,7 @@ while true do task.wait(3)
         end
     end
 end
-task.wait(loopDelay)
-end
+        task.wait(5)
+    end
+end)
+
