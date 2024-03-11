@@ -22,20 +22,17 @@ sethiddenproperty(Terrain, "Decoration", false)
 local Model = workspace
 local ClassTypes = {
 	"Decal",
-        "Graph",
 	"Texture",
         "TextLabel",
         "Terrain",
-        "Part",
         "Mesh",
-        "MeshPart",
+
 
 }
 
 for _, v in ipairs(workspace:GetDescendants()) do
 	if table.find(ClassTypes, v.ClassName) then
 		print(v.ClassName)
-		--test the script before deleting, remove the dashes beside the line below when ur ready
 		v:Destroy()
 	end
 end
