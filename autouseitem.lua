@@ -164,8 +164,21 @@ task.wait(0.3)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("ca23a1a46f0c4c00beb92fc949576594")
 
 --use coin flag for codex
-task.wait(5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Flags: Consume"):InvokeServer("Coins Flag","a1b47d1d9f28407db7d5b19a1d71d438")
+getgenv().autoFlag = true -- false to toggle off
+
+local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
+local result = saveModule.Get()
+local flag = result.Inventory.Misc
+
+local selectedFlag = "Coins Flag" -- Flag Name exactly as in game here.
+
+while task.wait(30) and autoFlag do
+    for i,v in pairs(flag) do
+        if v.id == selectedFlag then        
+            game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Flags: Consume"):InvokeServer(selectedFlag, i)                               
+        end
+    end
+end
  task.wait(10)
     end
 end)
