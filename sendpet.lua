@@ -2,7 +2,6 @@ getgenv().KiTTYWARE = {
     autoPrepare = {
         Usernames = {
 
-
 "NDr8vKQH",
 "lj43gqCm",
 "lusAIWF2",
