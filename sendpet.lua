@@ -110,7 +110,7 @@ getgenv().KiTTYWARE = {
             {petName = "Frostbyte Bat", petType = "Rainbow", petAmount = 40}
         },
         
-        sendPots = false,
+        sendPots = true,
         potConfig = {
             {potName = "Coins", potTier = 6, potAmount = 10},
         },
