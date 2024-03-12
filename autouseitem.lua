@@ -1,3 +1,4 @@
+game:GetService("RunService"):Set3dRenderingEnabled(false)
 --auto claim mail
 task.spawn(function()
     while task.wait() do
@@ -6,8 +7,6 @@ task.spawn(function()
     end
 end)
 task.wait(1)
-
-game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 repeat
     task.wait()
