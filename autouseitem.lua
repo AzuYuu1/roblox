@@ -16,7 +16,7 @@ until game:IsLoaded()
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
 Terrain.WaterReflectance = 0
-Terrain.WaterTransparency = 1
+Terrain.WaterTransparency = 0
 Terrain.WaterWaveSize = 0
 Terrain.WaterWaveSpeed = 0
 
@@ -34,12 +34,12 @@ local function clearTextures(v)
         v.Material = "Plastic"
         v.Reflectance = 0
     elseif (v:IsA("Decal") or v:IsA("Texture")) then
-        v.Transparency = 1
+        v.Transparency = 0
     elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
         v.Lifetime = NumberRange.new(0)
     elseif v:IsA("Explosion") then
-        v.BlastPressure = 1
-        v.BlastRadius = 1
+        v.BlastPressure = 0
+        v.BlastRadius = 0
     elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
         v.Enabled = false
     elseif v:IsA("MeshPart") then
@@ -49,9 +49,9 @@ local function clearTextures(v)
     elseif v:IsA("SpecialMesh")  then
         v.TextureId = 0
     elseif v:IsA("ShirtGraphic") then
-        v.Graphic = 1
+        v.Graphic = 0
     elseif (v:IsA("Shirt") or v:IsA("Pants")) then
-        v[v.ClassName .. "Template"] = 1
+        v[v.ClassName .. "Template"] = 0
     elseif v.Name == "Foilage" and v:IsA("Folder") then
         v:Destroy()
     elseif string.find(v.Name, "Tree") or string.find(v.Name, "Water") or string.find(v.Name, "Bush") or string.find(v.Name, "grass") then
@@ -74,24 +74,6 @@ end)
 
 task.spawn(function()
     while task.wait() do
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBall_Consume"):InvokeServer()
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBone_Consume"):InvokeServer()
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("SqueakyToy_Consume"):InvokeServer()
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBall_Consume"):InvokeServer()
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBone_Consume"):InvokeServer()
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("SqueakyToy_Consume"):InvokeServer()
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBall_Consume"):InvokeServer()
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBone_Consume"):InvokeServer()
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("SqueakyToy_Consume"):InvokeServer()
-task.wait(0.5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBall_Consume"):InvokeServer()
 task.wait(0.5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBone_Consume"):InvokeServer()
