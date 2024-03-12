@@ -12,9 +12,7 @@ end)
 task.spawn(function()
     while task.wait() do
 game:GetService("ReplicatedStorage").Network["ToyBall_Consume"]:InvokeServer()
-task.wait(0.5)
-game:GetService("ReplicatedStorage").Network["ToyBone_Consume"):InvokeServer()
-task.wait(0.5)
+game:GetService("ReplicatedStorage").Network["ToyBone_Consume"]:InvokeServer()
 game:GetService("ReplicatedStorage").Network["SqueakyToy_Consume"]:InvokeServer()
         task.wait(0.5)
     end
