@@ -112,7 +112,7 @@ getgenv().KiTTYWARE = {
         
         sendPots = false,
         potConfig = {
-            {potName = "Coins", potTier = 5, potAmount = 10},
+            {potName = "Coins", potTier = 6, potAmount = 10},
         },
         
         sendEnch = true,
