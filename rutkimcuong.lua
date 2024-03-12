@@ -15,6 +15,6 @@ getgenv().KiTTYWARE = {
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/920918ba6d30cd410dacee97916c773e.lua"))()
 
-        task.wait(0.5)
+        task.wait(35)
     end
 end)
