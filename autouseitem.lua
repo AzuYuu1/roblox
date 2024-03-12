@@ -80,27 +80,20 @@ game:GetService("ReplicatedStorage").Network["ToyBone_Consume"):InvokeServer()
 task.wait(0.5)
 game:GetService("ReplicatedStorage").Network["SqueakyToy_Consume"]:InvokeServer()
 
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("69c7fbeed3524224aaabeb54e3b2e1ee",2)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("9fb26a7a409f4965b18d88b3d78651d2",2)
---fluxus
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("b854636485bc46c69e07108ed2c99194",20)
-task.wait(0.5)
---codex
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
-task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
-        task.wait(5)
+local args = {
+    [1] = "920f3056a1ff4872a44c33760abc3ac6",
+    [2] = 1,
+    [1] = "33bd9d62962a4272bd56815dfbaf1e49",
+    [2] = 1,
+    [1] = "b854636485bc46c69e07108ed2c99194",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer(unpack(args))
+        task.wait(0.5)
     end
 end)
+task.wait(1)
 ----------------------------------------
 getgenv().autoMisc = {
     autoPotion = true,
