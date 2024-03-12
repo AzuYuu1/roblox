@@ -70,7 +70,7 @@ Workspace.DescendantAdded:Connect(function(v)
     clearTextures(v)
 end)
 
-
+------------------------------------------------
 
 task.spawn(function()
     while task.wait() do
@@ -79,8 +79,6 @@ task.wait(0.5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBone_Consume"):InvokeServer()
 task.wait(0.5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("SqueakyToy_Consume"):InvokeServer()
-
---auto use fruits, postion
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("69c7fbeed3524224aaabeb54e3b2e1ee",2)
 task.wait(0.5)
@@ -100,10 +98,10 @@ task.wait(0.5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
 task.wait(0.5)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("49244dda524848b19d42438af7b337ff",10)
-
-task.wait(3.5)
---fluxus
-
+        task.wait(5)
+    end
+end)
+----------------------------------------
 getgenv().autoMisc = {
     autoPotion = true,
     potionConfig = {
@@ -114,7 +112,6 @@ getgenv().autoMisc = {
     },
     
     }
-
 local Library = require(game.ReplicatedStorage.Library)
 local saveMod = require(game.ReplicatedStorage.Library.Client.Save)
 function getInfo(name) return saveMod.Get()[name] end 
@@ -133,31 +130,27 @@ while getgenv().autoMisc.autoPotion do
         if PotId then
             Library.Network.Fire("Potions: Consume", PotId)
         end
-        task.wait(0.5)
+        task.wait(5)
     end
-    task.wait(getgenv().autoMisc.potionCooldown)
+    task.wait(5)
 end
+------------------------------------------------------------------
+task.spawn(function()
+while task.wait() do
+local args = {
+    [1] = "7a2dd835a20340a89a46ed200e6aa2e2",--coin 7
+    [1] = "025fa9ae960d4f0dbbb90f23a5d41449",--coin 5
+    [1] = "0dcf7a6502fd4a3c947f8c1fd5c14d89",--coin 4
+}
+
+game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer(unpack(args))
+task.wait(3)
+end
+end)
 
 
---mang sach coin 7
+-----------------------------------------------------------------
 task.wait(1)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("7a2dd835a20340a89a46ed200e6aa2e2")
-task.wait(0.3)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("7a2dd835a20340a89a46ed200e6aa2e2")
-task.wait(0.3)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("7a2dd835a20340a89a46ed200e6aa2e2")
-task.wait(0.3)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("7a2dd835a20340a89a46ed200e6aa2e2")
-task.wait(0.3)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("ca23a1a46f0c4c00beb92fc949576594")
-task.wait(0.3)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("ca23a1a46f0c4c00beb92fc949576594")
-task.wait(0.3)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("ca23a1a46f0c4c00beb92fc949576594")
-task.wait(0.3)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Enchants_Equip"):FireServer("ca23a1a46f0c4c00beb92fc949576594")
-
---use coin flag for codex
 getgenv().autoFlag = true -- false to toggle off
 
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
@@ -166,14 +159,11 @@ local flag = result.Inventory.Misc
 
 local selectedFlag = "Coins Flag" -- Flag Name exactly as in game here.
 
-while task.wait(30) and autoFlag do
+while task.wait(60) and autoFlag do
     for i,v in pairs(flag) do
         if v.id == selectedFlag then        
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Flags: Consume"):InvokeServer(selectedFlag, i)                               
         end
     end
 end
- task.wait(10)
-    end
-end)
-            
+  
