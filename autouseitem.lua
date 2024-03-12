@@ -139,6 +139,7 @@ task.spawn(function()
 while task.wait() do
 local args = {
     [1] = "7a2dd835a20340a89a46ed200e6aa2e2",--coin 7
+    [1] = "6dadd10d95e8420e85d0be145bf90cde",--coin 6
     [1] = "025fa9ae960d4f0dbbb90f23a5d41449",--coin 5
     [1] = "0dcf7a6502fd4a3c947f8c1fd5c14d89",--coin 4
 }
