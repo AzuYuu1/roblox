@@ -78,7 +78,12 @@ task.wait(0.5)
 game:GetService("ReplicatedStorage").Network["ToyBone_Consume"):InvokeServer()
 task.wait(0.5)
 game:GetService("ReplicatedStorage").Network["SqueakyToy_Consume"]:InvokeServer()
+    end
+end)
+task.wait(1)
 
+task.spawn(function()
+    while task.wait() do
 local args = {
     [1] = "920f3056a1ff4872a44c33760abc3ac6",
     [2] = 1,
