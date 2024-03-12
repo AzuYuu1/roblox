@@ -74,11 +74,11 @@ end)
 
 task.spawn(function()
     while task.wait() do
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBall_Consume"):InvokeServer()
+game:GetService("ReplicatedStorage").Network["ToyBall_Consume"]:InvokeServer()
 task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("ToyBone_Consume"):InvokeServer()
+game:GetService("ReplicatedStorage").Network["ToyBone_Consume"):InvokeServer()
 task.wait(0.5)
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("SqueakyToy_Consume"):InvokeServer()
+game:GetService("ReplicatedStorage").Network["SqueakyToy_Consume"]:InvokeServer()
 
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("69c7fbeed3524224aaabeb54e3b2e1ee",2)
 task.wait(0.5)
