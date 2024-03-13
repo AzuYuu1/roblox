@@ -43,7 +43,7 @@ while getgenv().autoMisc.autoEnchant do
         end
         task.wait(5)
     end
-    task.wait(5)
+    task.wait(25)
 end
 ---------------------------------------------------------------------------
 --Auto use Potions
@@ -81,7 +81,7 @@ while getgenv().autoMisc.autoPotion do
         end
         task.wait(3)
     end
-    task.wait(3)
+    task.wait(23)
 end
 
 
