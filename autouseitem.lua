@@ -1,4 +1,7 @@
-
+_G.loop = true
+_G.loopDelay = 10
+while _G.loop do
+    
 task.spawn(function()
     while task.wait() do
 game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
@@ -100,3 +103,5 @@ while task.wait(30) and autoFlag do
     end
 end
   
+task.wait(loopDelay)
+end
