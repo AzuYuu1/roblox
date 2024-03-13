@@ -22,7 +22,9 @@ game:GetService("ReplicatedStorage").Network["SqueakyToy_Consume"]:InvokeServer(
 --game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("b854636485bc46c69e07108ed2c99194",2)
 game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("616cc8525158402b830a742ef40be3b2",2)
 
-
+        task.wait(5)
+    end
+end)
 ----------------------------------------
 getgenv().autoMisc = {
     autoPotion = true,
