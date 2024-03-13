@@ -7,7 +7,6 @@ local ClassTypes = {
 	"Texture",
         "Important",
 	"Terrain",
-	        "Important",
         "Ground"
 }
 
@@ -77,6 +76,7 @@ end)
 task.wait(1)
 game:GetService("ReplicatedStorage").Network["World2Teleport"]:InvokeServer()
 task.wait(0.5)
+
 --auto claim mail
 task.spawn(function()
     while task.wait() do
