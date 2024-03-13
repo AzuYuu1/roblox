@@ -1,6 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AzuYuu1/roblox/main/2d.lua"))()
-
-task.wait(1)
 
 --auto claim mail
 task.spawn(function()
@@ -30,8 +27,8 @@ local args = {
     [2] = 1,
     [1] = "b854636485bc46c69e07108ed2c99194",
     [2] = 1,
-    [1] = "616cc8525158402b830a742ef40be3b2",--rainbow codex
-    [2] = 1,
+    [1] = "616cc8525158402b830a742ef40be3b2"--rainbow codex
+    [2] = 1
 }
 
 game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer(unpack(args))
