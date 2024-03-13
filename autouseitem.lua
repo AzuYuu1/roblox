@@ -4,7 +4,7 @@ local ClassTypes = {
 	"Decal",
 	"Texture",
         "Important",
-        "Ground"
+        "Ground",
 }
 
 for _, v in ipairs(workspace:GetDescendants()) do
