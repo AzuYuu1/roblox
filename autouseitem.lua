@@ -57,8 +57,12 @@ getgenv().autoMisc = {
     autoPotion = true,
     potionConfig = {
 
-        {Name = "Coins", Tier =  6},
+        {Name = "Coins", Tier = 6},
+        {Name = "Coins", Tier = 5},
+        {Name = "Coins", Tier = 4},
+        {Name = "Damage", Tier = 6},
         {Name = "Damage", Tier = 5},
+        {Name = "Damage", Tier = 4},
 
     },
     
