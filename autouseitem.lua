@@ -1,11 +1,4 @@
-_G.loop = true
-_G.loopDelay = 10
-while _G.loop do
-game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("616cc8525158402b830a742ef40be3b2",2)
-task.wait(loopDelay)
-end
-
-    
+task.wait(50)
 task.spawn(function()
     while task.wait() do
 game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
