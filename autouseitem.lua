@@ -1,3 +1,5 @@
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+
 task.spawn(function()
     while task.wait() do
 game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
