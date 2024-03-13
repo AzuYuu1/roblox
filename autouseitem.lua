@@ -1,7 +1,7 @@
 game:GetService("RunService"):Set3dRenderingEnabled(false)
-repeat
-    task.wait()
-until game:IsLoaded()
+
+task.spawn(function()
+    while task.wait() do
 local Model = workspace
 local ClassTypes = {
 	"Decal",
@@ -17,6 +17,9 @@ for _, v in ipairs(workspace:GetDescendants()) do
 		v:Destroy()
 	end
 end
+			        task.wait(0.5)
+    end
+end)
 task.wait(1)
 --------------------------------------------
 
