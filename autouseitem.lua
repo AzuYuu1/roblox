@@ -15,8 +15,6 @@ for _, v in ipairs(workspace:GetDescendants()) do
 end
 
 task.wait(1)
-game:GetService("ReplicatedStorage").Network["World2Teleport"]:InvokeServer()
-task.wait(0.5)
 
 --auto claim mail
 task.spawn(function()
