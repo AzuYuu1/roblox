@@ -28,9 +28,20 @@ task.spawn(function()
 end)
 
 task.spawn(function()
+while task.wait() do          
+game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594")
+task.wait(0.5)
+game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594")
+   task.wait(3.5)
+    end
+end)
+
+task.spawn(function()
     while task.wait() do
 game:GetService("ReplicatedStorage").Network["ToyBall_Consume"]:InvokeServer()
+			task.wait(0.5)
 game:GetService("ReplicatedStorage").Network["ToyBone_Consume"]:InvokeServer()
+			task.wait(0.5)
 game:GetService("ReplicatedStorage").Network["SqueakyToy_Consume"]:InvokeServer()
         task.wait(3)
     end
@@ -38,9 +49,9 @@ end)
 
 task.spawn(function()
     while task.wait() do
-game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("920f3056a1ff4872a44c33760abc3ac6",2)
-game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("33bd9d62962a4272bd56815dfbaf1e49",2)
-game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("b854636485bc46c69e07108ed2c99194",2)
+--game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("920f3056a1ff4872a44c33760abc3ac6",2)
+--game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("33bd9d62962a4272bd56815dfbaf1e49",2)
+--game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("b854636485bc46c69e07108ed2c99194",2)
 game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("616cc8525158402b830a742ef40be3b2",2)
         task.wait(2.5)
     end
@@ -79,13 +90,6 @@ while getgenv().autoMisc.autoPotion do
     end
     task.wait(5)
 end
-------------------------------------------------------------------
-task.spawn(function()
-while task.wait() do          
-game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594")
-   task.wait(2.5)
-    end
-end)
 
 
 -----------------------------------------------------------------
