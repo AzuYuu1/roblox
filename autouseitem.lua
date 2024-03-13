@@ -1,12 +1,9 @@
-repeat
-    task.wait()
-until game:IsLoaded()
+repeat task.wait() until game:IsLoaded()
 local Model = workspace
 local ClassTypes = {
 	"Decal",
 	"Texture",
         "Important",
-	"Terrain",
         "Ground"
 }
 
