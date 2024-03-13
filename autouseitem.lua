@@ -1,18 +1,4 @@
-repeat task.wait() until game:IsLoaded()
-local Model = workspace
-local ClassTypes = {
-	"Decal",
-	"Texture",
-        "Important",
-        "Ground"
-}
-
-for _, v in ipairs(workspace:GetDescendants()) do
-	if table.find(ClassTypes, v.ClassName) then
-		print(v.ClassName)
-		v:Destroy()
-	end
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AzuYuu1/roblox/main/2d.lua"))()
 task.wait(1)
 --auto claim mail
 task.spawn(function()
