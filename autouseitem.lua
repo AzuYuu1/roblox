@@ -38,18 +38,17 @@ task.spawn(function()
 game:GetService("ReplicatedStorage").Network["ToyBall_Consume"]:InvokeServer()
 game:GetService("ReplicatedStorage").Network["ToyBone_Consume"]:InvokeServer()
 game:GetService("ReplicatedStorage").Network["SqueakyToy_Consume"]:InvokeServer()
-        task.wait(1)
+        task.wait(3)
     end
 end)
-task.wait(1)
 
 task.spawn(function()
     while task.wait() do
-game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("920f3056a1ff4872a44c33760abc3ac6",1)
-game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("33bd9d62962a4272bd56815dfbaf1e49",1)
-game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("b854636485bc46c69e07108ed2c99194",1)
-game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("616cc8525158402b830a742ef40be3b2",1)
-        task.wait(1)
+game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("920f3056a1ff4872a44c33760abc3ac6",2)
+game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("33bd9d62962a4272bd56815dfbaf1e49",2)
+game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("b854636485bc46c69e07108ed2c99194",2)
+game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("616cc8525158402b830a742ef40be3b2",2)
+        task.wait(2.5)
     end
 end)
 
@@ -90,7 +89,7 @@ end
 task.spawn(function()
 while task.wait() do          
 game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594")
-   task.wait(0.5)
+   task.wait(2.5)
     end
 end)
 
