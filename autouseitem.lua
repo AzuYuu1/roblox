@@ -2,12 +2,6 @@
 task.spawn(function()
     while task.wait() do
 game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
-task.wait(0.5)		
-game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594") --coin 6
-task.wait(0.5)			
-game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594") --coin 5
-task.wait(0.5)
-game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("7f7046a0295f4139b2a9629a34eb47a1") -- coin 4
 task.wait(0.5)	
 game:GetService("ReplicatedStorage").Network["ToyBall_Consume"]:InvokeServer()
 task.wait(0.5)	
@@ -23,7 +17,42 @@ game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("616c
         task.wait(5)
     end
 end)
-----------------------------------------
+-----------------------------------------------------------------------------------
+getgenv().autoMisc = {
+    autoEnchant = true,
+    enchantConfig = {
+
+        {Name = "Coins", Tier =  7},
+        {Name = "Coins", Tier =  6},
+        {Name = "Coins", Tier =  5},
+
+    },
+    
+    }
+local Library = require(game.ReplicatedStorage.Library)
+local saveMod = require(game.ReplicatedStorage.Library.Client.Save)
+function getInfo(name) return saveMod.Get()[name] end 
+
+function getUID(Class, Name, Tier)
+    for i,v in pairs(getInfo("Inventory")[Class]) do
+        if v.id == Name and v.tn == Tier then
+            return i
+        end
+    end
+end
+
+while getgenv().autoMisc.autoEnchant do
+    for _,enchant in pairs(getgenv().autoMisc. enchantConfig) do
+        local enchantId = getUID("Enchant", enchant.Name, enchant.Tier)
+        if enchantId then
+            Library.Network.Fire("Enchants_Equip", enchantId)
+        end
+        task.wait(1.5)
+    end
+    task.wait(1.5)
+end
+---------------------------------------------------------------------------
+--Auto use Potions
 getgenv().autoMisc = {
     autoPotion = true,
     potionConfig = {
@@ -59,6 +88,7 @@ end
 
 
 -----------------------------------------------------------------
+--Auto Use Flag
 task.wait(1)
 getgenv().autoFlag = true -- false to toggle off
 
