@@ -1,5 +1,14 @@
 task.spawn(function()
     while task.wait() do
+        game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
+        task.wait(5)
+    end
+end)
+
+task.wait(1)
+
+task.spawn(function()
+    while task.wait() do
 local Model = workspace
 local ClassTypes = {
 	"Decal",
