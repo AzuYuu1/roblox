@@ -1,12 +1,13 @@
 task.spawn(function()
     while task.wait() do
 game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
-        task.wait(1.5)
+        task.wait(5)
     end
 end)
 
-task.wait(50)
 
+task.spawn(function()
+    while task.wait() do
 getgenv().autoMisc = {
     autoEnchant = true,
     enchantConfig = {
@@ -36,12 +37,17 @@ while getgenv().autoMisc.autoEnchant do
         if enchantId then
             Library.Network.Fire("Enchants_Equip", enchantId)
         end
-        task.wait(15)
+        task.wait(1)
     end
-    task.wait(15)
+    task.wait(1)
 end
----------------------------------------------------------------------------
---Auto use Potions
+        task.wait(2)
+    end
+end)
+
+            
+task.spawn(function()
+    while task.wait() do
 getgenv().autoMisc = {
     autoPotion = true,
     potionConfig = {
@@ -74,14 +80,17 @@ while getgenv().autoMisc.autoPotion do
         if PotId then
             Library.Network.Fire("Potions: Consume", PotId)
         end
-        task.wait(20)
+        task.wait(1)
     end
-    task.wait(20)
+    task.wait(1)
 end
+        task.wait(2)
+    end
+end)
 
-
------------------------------------------------------------------
---Auto Use Flag
+            
+task.spawn(function()
+    while task.wait() do
 getgenv().autoFlag = true -- false to toggle off
 
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
@@ -97,4 +106,6 @@ while task.wait(30) and autoFlag do
         end
     end
 end
-  
+        task.wait(2)
+    end
+end)
