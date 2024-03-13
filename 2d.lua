@@ -1,3 +1,4 @@
+game:GetService("RunService"):Set3dRenderingEnabled(false)
 repeat
     task.wait()
 until game:IsLoaded()
@@ -7,7 +8,7 @@ local ClassTypes = {
 	"Texture",
         "Important",
 	"Terrain",
-	        "Important",
+	"Important",
         "Ground"
 }
 
