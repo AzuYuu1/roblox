@@ -1,4 +1,5 @@
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AzuYuu1/roblox/main/2d.lua"))()
+task.wait(1)
 task.spawn(function()
     while task.wait() do
         game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
@@ -71,7 +72,7 @@ end
 ------------------------------------------------------------------
 task.spawn(function()
 while task.wait() do          
-game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594")
+game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594") --sach 5 codex
    task.wait(0.5)
     end
 end)
