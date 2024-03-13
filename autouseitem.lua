@@ -1,5 +1,7 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AzuYuu1/roblox/main/2d.lua"))()
 task.wait(1)
+game:GetService("ReplicatedStorage").Network["World2Teleport"]:InvokeServer()
+task.wait(0.5)
 --auto claim mail
 task.spawn(function()
     while task.wait() do
