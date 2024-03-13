@@ -1,22 +1,20 @@
 
 task.spawn(function()
     while task.wait() do
-        game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
-
-
+game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
+task.wait(0.5)		
 game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594") --coin 6
 task.wait(0.5)			
 game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594") --coin 5
 task.wait(0.5)
 game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("7f7046a0295f4139b2a9629a34eb47a1") -- coin 4
-
+task.wait(0.5)	
 game:GetService("ReplicatedStorage").Network["ToyBall_Consume"]:InvokeServer()
-			task.wait(0.5)
+task.wait(0.5)	
 game:GetService("ReplicatedStorage").Network["ToyBone_Consume"]:InvokeServer()
-			task.wait(0.5)
+task.wait(0.5)	
 game:GetService("ReplicatedStorage").Network["SqueakyToy_Consume"]:InvokeServer()
-
-
+task.wait(0.5)	
 --game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("920f3056a1ff4872a44c33760abc3ac6",2)
 --game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("33bd9d62962a4272bd56815dfbaf1e49",2)
 --game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer("b854636485bc46c69e07108ed2c99194",2)
@@ -70,7 +68,7 @@ local flag = result.Inventory.Misc
 
 local selectedFlag = "Coins Flag" -- Flag Name exactly as in game here.
 
-while task.wait(60) and autoFlag do
+while task.wait(1) and autoFlag do
     for i,v in pairs(flag) do
         if v.id == selectedFlag then        
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Flags: Consume"):InvokeServer(selectedFlag, i)                               
