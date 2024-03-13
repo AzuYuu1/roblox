@@ -17,9 +17,10 @@ for _, v in ipairs(workspace:GetDescendants()) do
 		v:Destroy()
 	end
 end
-			        task.wait(0.5)
+task.wait(1.5)
     end
 end)
+
 task.wait(1)
 --------------------------------------------
 
