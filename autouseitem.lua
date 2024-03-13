@@ -1,5 +1,3 @@
-game:GetService("RunService"):Set3dRenderingEnabled(false)
-
 task.spawn(function()
     while task.wait() do
 local Model = workspace
@@ -20,6 +18,8 @@ end
 task.wait(1.5)
     end
 end)
+
+game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 task.wait(1)
 --------------------------------------------
@@ -44,7 +44,7 @@ local args = {
     [1] = "b854636485bc46c69e07108ed2c99194",
     [2] = 1,
     [1] = "616cc8525158402b830a742ef40be3b2",
-    [2] = 1
+    [2] = 1,
 }
 
 game:GetService("ReplicatedStorage").Network["Fruits: Consume"]:FireServer(unpack(args))
@@ -88,7 +88,7 @@ end
 ------------------------------------------------------------------
 task.spawn(function()
 while task.wait() do          
-game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594") --sach 5 codex
+game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer("ca23a1a46f0c4c00beb92fc949576594")
    task.wait(0.5)
     end
 end)
