@@ -47,9 +47,9 @@ while getgenv().autoMisc.autoEnchant do
         if enchantId then
             Library.Network.Fire("Enchants_Equip", enchantId)
         end
-        task.wait(1.5)
+        task.wait(1)
     end
-    task.wait(1.5)
+    task.wait(1)
 end
 ---------------------------------------------------------------------------
 --Auto use Potions
@@ -85,9 +85,9 @@ while getgenv().autoMisc.autoPotion do
         if PotId then
             Library.Network.Fire("Potions: Consume", PotId)
         end
-        task.wait(1.5)
+        task.wait(1)
     end
-    task.wait(1.5)
+    task.wait(1)
 end
 
 
