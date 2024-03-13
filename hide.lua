@@ -1,7 +1,20 @@
 repeat
     task.wait()
 until game:IsLoaded()
+local Model = workspace
+local ClassTypes = {
+	"Decal",
+	"Texture",
+        "Important",
+        "Ground"
+}
 
+for _, v in ipairs(workspace:GetDescendants()) do
+	if table.find(ClassTypes, v.ClassName) then
+		print(v.ClassName)
+		v:Destroy()
+	end
+end
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
 Terrain.WaterReflectance = 0
