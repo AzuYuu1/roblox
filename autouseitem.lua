@@ -1,19 +1,3 @@
-repeat task.wait() until game:IsLoaded()
-local Model = workspace
-local ClassTypes = {
-	"Decal",
-	"Texture",
-        "Important",
-        "Ground",
-}
-
-for _, v in ipairs(workspace:GetDescendants()) do
-	if table.find(ClassTypes, v.ClassName) then
-		print(v.ClassName)
-		v:Destroy()
-	end
-end
-
 task.wait(1)
 
 --auto claim mail
@@ -94,7 +78,7 @@ local args = {
     [1] = "6dadd10d95e8420e85d0be145bf90cde",--coin 6
     [1] = "025fa9ae960d4f0dbbb90f23a5d41449",--coin 5
     [1] = "ca23a1a46f0c4c00beb92fc949576594",--coin 5 codex     
-    [1] = "0dcf7a6502fd4a3c947f8c1fd5c14d89"--coin 4
+    [1] = "0dcf7a6502fd4a3c947f8c1fd5c14d89",--coin 4
 }
 
 game:GetService("ReplicatedStorage").Network["Enchants_Equip"]:FireServer(unpack(args))
