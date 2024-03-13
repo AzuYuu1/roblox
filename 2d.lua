@@ -8,7 +8,6 @@ local ClassTypes = {
 	"Texture",
         "Important",
 	"Terrain",
-	"Important",
         "Ground"
 }
 
