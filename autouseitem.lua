@@ -1,24 +1,3 @@
-task.wait(1)
-
-local Model = workspace
-local ClassTypes = {
-	"Decal",
-	"Texture",
-        "Important",
-	"Terrain",
-        "Ground"
-}
-
-for _, v in ipairs(workspace:GetDescendants()) do
-	if table.find(ClassTypes, v.ClassName) then
-		print(v.ClassName)
-		v:Destroy()
-	end
-end
-
-
-task.wait(1)
---------------------------------------------
 
 task.spawn(function()
     while task.wait() do
