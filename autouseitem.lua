@@ -7,8 +7,6 @@ end)
 
 task.wait(1)
 
-task.spawn(function()
-    while task.wait() do
 local Model = workspace
 local ClassTypes = {
 	"Decal",
@@ -24,11 +22,7 @@ for _, v in ipairs(workspace:GetDescendants()) do
 		v:Destroy()
 	end
 end
-task.wait(1.5)
-    end
-end)
 
-game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 task.wait(1)
 --------------------------------------------
