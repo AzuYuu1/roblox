@@ -1,11 +1,12 @@
-task.wait(50)
 task.spawn(function()
     while task.wait() do
 game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
         task.wait(1.5)
     end
 end)
------------------------------------------------------------------------------------
+
+task.wait(50)
+
 getgenv().autoMisc = {
     autoEnchant = true,
     enchantConfig = {
@@ -35,9 +36,9 @@ while getgenv().autoMisc.autoEnchant do
         if enchantId then
             Library.Network.Fire("Enchants_Equip", enchantId)
         end
-        task.wait(5)
+        task.wait(15)
     end
-    task.wait(25)
+    task.wait(15)
 end
 ---------------------------------------------------------------------------
 --Auto use Potions
@@ -73,9 +74,9 @@ while getgenv().autoMisc.autoPotion do
         if PotId then
             Library.Network.Fire("Potions: Consume", PotId)
         end
-        task.wait(3)
+        task.wait(20)
     end
-    task.wait(23)
+    task.wait(20)
 end
 
 
