@@ -85,15 +85,14 @@ while getgenv().autoMisc.autoPotion do
         if PotId then
             Library.Network.Fire("Potions: Consume", PotId)
         end
-        task.wait(5)
+        task.wait(1.5)
     end
-    task.wait(5)
+    task.wait(1.5)
 end
 
 
 -----------------------------------------------------------------
 --Auto Use Flag
-task.wait(1)
 getgenv().autoFlag = true -- false to toggle off
 
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
@@ -102,7 +101,7 @@ local flag = result.Inventory.Misc
 
 local selectedFlag = "Coins Flag" -- Flag Name exactly as in game here.
 
-while task.wait(1) and autoFlag do
+while task.wait(3) and autoFlag do
     for i,v in pairs(flag) do
         if v.id == selectedFlag then        
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Flags: Consume"):InvokeServer(selectedFlag, i)                               
