@@ -101,7 +101,7 @@ local flag = result.Inventory.Misc
 
 local selectedFlag = "Coins Flag" -- Flag Name exactly as in game here.
 
-while task.wait(3) and autoFlag do
+while task.wait(30) and autoFlag do
     for i,v in pairs(flag) do
         if v.id == selectedFlag then        
             game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Flags: Consume"):InvokeServer(selectedFlag, i)                               
