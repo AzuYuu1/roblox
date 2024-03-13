@@ -17,6 +17,9 @@ for _, v in ipairs(workspace:GetDescendants()) do
 	end
 end
 
+repeat
+    task.wait()
+until game:IsLoaded()
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
 Terrain.WaterReflectance = 0
