@@ -112,13 +112,13 @@ end)
             
 task.spawn(function()
     while task.wait(1.5) do
-getgenv().autoFlag = true -- false to toggle off
+getgenv().autoFlag = true
 
 local saveModule = require(game:GetService("ReplicatedStorage").Library.Client.Save)
 local result = saveModule.Get()
 local flag = result.Inventory.Misc
 
-local selectedFlag = "Coins Flag" -- Flag Name exactly as in game here.
+local selectedFlag = "Coins Flag"
 
 while task.wait(30) and autoFlag do
     for i,v in pairs(flag) do
