@@ -88,8 +88,10 @@ end
     end
 end)
 
+task.spawn(function()
+    while task.wait(1.5) do
 getgenv().useTnt = true
-getgenv().useCooldown = 15
+getgenv().useCooldown = 3
 local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
 local isArea50
 
@@ -102,7 +104,12 @@ task.spawn(function()
         game:GetService("ReplicatedStorage").Network.TNT_Crate_Consume:InvokeServer()
     end
 end)
+task.wait(2)
+    end
+end)
 
+task.spawn(function()
+    while task.wait(1.5) do
 getgenv().useTele = true
 getgenv().useCd = 1
 local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
@@ -117,7 +124,9 @@ task.spawn(function()
         game:GetService("ReplicatedStorage").Network["RequestTechRocket"]:FireServer()
     end
 end)
-
+task.wait(2)
+    end
+end)
 
             
 task.spawn(function()
