@@ -6,14 +6,6 @@ game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer(
     end
 end)
 
-_G.loop = true
-_G.loopDelay = 6
-while _G.loop do
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Fruits: Consume"):FireServer("12fd4704d6eb4f68acb7eb103af1ab47",1)
-task.wait(loopDelay)
-end
-
-
 task.spawn(function()
     while task.wait(1.5) do
 getgenv().autoMisc = {
