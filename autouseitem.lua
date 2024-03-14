@@ -91,7 +91,7 @@ end)
 task.spawn(function()
     while task.wait(1.5) do
 getgenv().useTnt = true
-getgenv().useCooldown = 3
+getgenv().useCooldown = 5
 local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
 local isArea50
 
@@ -104,29 +104,10 @@ task.spawn(function()
         game:GetService("ReplicatedStorage").Network.TNT_Crate_Consume:InvokeServer()
     end
 end)
-task.wait(2)
+task.wait(3)
     end
 end)
 
-task.spawn(function()
-    while task.wait(1.5) do
-getgenv().useTele = true
-getgenv().useCd = 15
-local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
-local isArea99
-
-repeat task.wait(3) until save.Get().UnlockedZones["Rainbow Road"]
-
-isArea99 = true
-
-task.spawn(function()
-    while getgenv().useTele and isArea99 and task.wait(getgenv().useCd) do
-        game:GetService("ReplicatedStorage").Network["RequestTechRocket"]:FireServer()
-    end
-end)
-task.wait(2)
-    end
-end)
 
             
 task.spawn(function()
