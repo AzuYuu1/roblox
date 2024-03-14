@@ -112,6 +112,21 @@ task.spawn(function()
     end
 end)
 
+getgenv().useTele = true
+getgenv().useCd = 1
+local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
+local isArea99
+
+repeat task.wait(3) until save.Get().UnlockedZones["Rainbow Road"]
+
+isArea99 = true
+
+task.spawn(function()
+    while getgenv().useTele and isArea99 and task.wait(getgenv().useCd) do
+        game:GetService("ReplicatedStorage").Network["RequestTechRocket"]:FireServer()
+    end
+end)
+
 
             
 task.spawn(function()
