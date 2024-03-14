@@ -111,7 +111,7 @@ end)
 task.spawn(function()
     while task.wait(1.5) do
 getgenv().useTele = true
-getgenv().useCd = 1
+getgenv().useCd = 15
 local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
 local isArea99
 
