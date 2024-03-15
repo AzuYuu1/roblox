@@ -85,7 +85,19 @@ task.wait(1)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_PlayerLeaveInstance"):FireServer("Fishing")
 task.wait(120)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.AdvancedFishing.Teleports.Enter.CFrame.Position)
-task.wait(3)
+task.wait(5)
+
+repeat task.wait(1) until game:IsLoaded()
+function claimVIP()
+    local oldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    local chr = game.Players.LocalPlayer.Character
+    local vippos = Vector3.new(1413, 95, -534)
+    chr.HumanoidRootPart.CFrame = CFrame.new(vippos)
+    task.wait(0.5)
+    chr.HumanoidRootPart.CFrame = oldPos
+end
+claimVIP()
+
 
 _G.loop = true
 _G.loopDelay = 0.00001
