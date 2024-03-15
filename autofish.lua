@@ -88,14 +88,14 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.wor
 task.wait(5)
 
 repeat task.wait(1) until game:IsLoaded()
-task.wait(1)
+task.wait(0.5)
 function claimVIP()
     local oldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     local chr = game.Players.LocalPlayer.Character
-    local vippos = Vector3.new(1413, 65, -534)
+    local vippos = Vector3.new(1460, 61, -4442)
 
     chr.HumanoidRootPart.CFrame = CFrame.new(vippos)
-    task.wait(1)
+    task.wait(0.5)
     chr.HumanoidRootPart.CFrame = oldPos
 end
 
