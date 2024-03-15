@@ -131,17 +131,3 @@ end
 end)
 
 
-getgenv().useTele = true
-getgenv().useCooldown = 3
-local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
-local isArea125
-
-repeat task.wait(3) until save.Get().UnlockedZones["Rainbow Road"]
-
-isArea125 = true
-
-task.spawn(function()
-    while getgenv().useTele and isArea125 and task.wait(getgenv().useCooldown) do
-        game:GetService("ReplicatedStorage").Network["RequestTechRocket"]:FireServer()
-    end
-end)
