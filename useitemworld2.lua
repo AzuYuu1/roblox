@@ -130,9 +130,7 @@ end
     end
 end)
 
-    repeat
-    task.wait()
-until game:IsLoaded()
+
 getgenv().useTele = true
 getgenv().useCooldown = 3
 local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
