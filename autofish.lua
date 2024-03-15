@@ -87,7 +87,8 @@ task.wait(120)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.AdvancedFishing.Teleports.Enter.CFrame.Position)
 task.wait(5)
 
-repeat task.wait(1) until game:IsLoaded()
+task.spawn(function()
+    while task.wait() do
 function claimVIP()
     local oldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     local chr = game.Players.LocalPlayer.Character
@@ -97,6 +98,9 @@ function claimVIP()
     chr.HumanoidRootPart.CFrame = oldPos
 end
 claimVIP()
+task.wait(0.1)
+    end
+end)
 
 
 _G.loop = true
