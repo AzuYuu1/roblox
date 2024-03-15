@@ -92,7 +92,7 @@ task.spawn(function()
 function claimVIP()
     local oldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     local chr = game.Players.LocalPlayer.Character
-    local vippos = Vector3.new(1413, 95, -534)
+    local vippos = Vector3.new(1413, 65, -534)
     chr.HumanoidRootPart.CFrame = CFrame.new(vippos)
     task.wait(0.5)
     chr.HumanoidRootPart.CFrame = oldPos
