@@ -1,21 +1,3 @@
-repeat
-    task.wait()
-until game:IsLoaded()
-getgenv().useTele = true
-getgenv().useCooldown = 3
-local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
-local isArea125
-
-repeat task.wait(3) until save.Get().UnlockedZones["Rainbow Road"]
-
-isArea125 = true
-
-task.spawn(function()
-    while getgenv().useTele and isArea125 and task.wait(getgenv().useCooldown) do
-        game:GetService("ReplicatedStorage").Network["RequestTechRocket"]:FireServer()
-    end
-end)
-
 task.spawn(function()
     while task.wait(1.5) do
 game:GetService("ReplicatedStorage").Network["Mailbox: Claim All"]:InvokeServer()
@@ -145,5 +127,23 @@ while task.wait(30) and autoFlag do
     end
 end
         task.wait(2)
+    end
+end)
+
+    repeat
+    task.wait()
+until game:IsLoaded()
+getgenv().useTele = true
+getgenv().useCooldown = 3
+local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
+local isArea125
+
+repeat task.wait(3) until save.Get().UnlockedZones["Rainbow Road"]
+
+isArea125 = true
+
+task.spawn(function()
+    while getgenv().useTele and isArea125 and task.wait(getgenv().useCooldown) do
+        game:GetService("ReplicatedStorage").Network["RequestTechRocket"]:FireServer()
     end
 end)
