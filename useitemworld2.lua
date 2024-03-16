@@ -1,3 +1,5 @@
+task.spawn(function()
+    while task.wait(1.5) do
 getgenv().useTnt = true
 getgenv().useCooldown = 3
 local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
@@ -12,7 +14,9 @@ task.spawn(function()
         game:GetService("ReplicatedStorage").Network["RequestTechRocket"]:FireServer()
     end
 end)
-
+        task.wait(5)
+    end
+end)
 
 
 task.spawn(function()
