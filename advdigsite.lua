@@ -27,7 +27,7 @@ task.spawn(function()
     end
 end)
 
-tasl.wait(2)
+task.wait(2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.workspace.__THINGS.Instances.Digsite.Teleports.Enter.CFrame.Position)
 task.wait(15)
 game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Instancing_FireCustomFromClient"):FireServer("Digsite", "ClaimShovel")
