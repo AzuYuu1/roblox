@@ -399,14 +399,14 @@ getgenv().KiTTYWARE = {
 "HuynhlyFRgeN",
         },
         mailConfig = {
-            {Class = "Pet", Name = "Frostbyte Husky", Tier = 2, Shiny = false, Amount = 20},
-            {Class = "Currency", Name = "Diamonds", Tier = nil, Shiny = false, Amount = 100000},
+            {Class = "Pet", Name = "Alien Parasite", Tier = 2, Shiny = false, Amount = 40},
+            --{Class = "Currency", Name = "Diamonds", Tier = nil, Shiny = false, Amount = 100000},
         },
     }
 }
 --[[
 local prefix = "jqdmk"
-local suffix = { from = 1, to = 99 } 
+local suffix = { from = 1, to = 400 } 
 for i = suffix.from, suffix.to do
     table.insert(getgenv().KiTTYWARE.autoPrepare.Usernames, prefix..tostring(i)) -- credit 2 cart.dev frfr
 end]]
