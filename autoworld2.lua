@@ -1,5 +1,6 @@
 _G.loop = true
 _G.loopDelay = 15
+while _G.loop do
 repeat task.wait(1) until game.PlaceId ~= nil
 repeat task.wait(1) until game:GetService("Players") and game:GetService("Players").LocalPlayer
 repeat task.wait(1) until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("__INTRO")
@@ -25,9 +26,8 @@ local worldName = mapFolder.Name == "Map" and "World 1" or mapFolder.Name == "Ma
 local worldCurrency if worldName == "World 1" then worldCurrency = "Coins" elseif worldName == "World 2" then worldCurrency = "TechCoins" end
 local eggLocal = getsenv(Player.PlayerScripts.Scripts.Game["Egg Opening Frontend"])
 
-while _G.loop do
 hookfunction(eggLocal.PlayEggAnimation, function() return end)
-hookfunction(require(game.ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier, function() return 1 end)
+hookfunction(require(game.ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier, function() return 500 end)
 --
 for k,v in getconnections(Player.Idled) do
 	v:Disable()
