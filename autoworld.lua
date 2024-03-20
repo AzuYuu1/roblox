@@ -17,7 +17,7 @@ local unfinished = true
 local currentZone
 
 require(ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier = function(...)
-    return 0.0001
+    return 50
 end
 while _G.loop do
 local function teleportToMaxZone()
