@@ -1,5 +1,6 @@
 _G.autosend = true
 _G.openDelay = 25
+while _G.autosend do
 getgenv().KiTTYWARE = {
     autoPrepare = {
         Usernames = {
@@ -31,7 +32,7 @@ en
 
 _G.autoOpen = true
 _G.openDelay = 0.5
-
+while _G.autoOpen do
 local Network = game.ReplicatedStorage.Network
 local Items = {"Gift Bag", "Large Gift Bag", "Charm Stone"}
 
