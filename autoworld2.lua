@@ -1,5 +1,5 @@
 _G.loop = true
-_G.loopDelay = 5
+_G.loopDelay = 15
 while _G.loop do
 
 repeat task.wait(1) until game.PlaceId ~= nil
