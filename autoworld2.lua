@@ -1,8 +1,8 @@
+_G.loop = true
+_G.loopDelay = 15
 repeat task.wait(1) until game.PlaceId ~= nil
 repeat task.wait(1) until game:GetService("Players") and game:GetService("Players").LocalPlayer
 repeat task.wait(1) until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("__INTRO")
-_G.loop = true
-_G.loopDelay = 15
 local HttpService = game.HttpService
 local RepStor = game.ReplicatedStorage
 local Library = require(RepStor.Library)
@@ -27,7 +27,7 @@ local eggLocal = getsenv(Player.PlayerScripts.Scripts.Game["Egg Opening Frontend
 
 while _G.loop do
 hookfunction(eggLocal.PlayEggAnimation, function() return end)
-hookfunction(require(game.ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier, function() return 2500 end)
+hookfunction(require(game.ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier, function() return 1 end)
 --
 for k,v in getconnections(Player.Idled) do
 	v:Disable()
