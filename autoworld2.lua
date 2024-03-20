@@ -1,7 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/waitForGameLoad.lua"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AzuYuu1/roblox/main/2d.lua"))()
-
-
 _G.loop = true
 _G.loopDelay = 15
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
