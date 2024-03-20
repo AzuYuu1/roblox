@@ -15,11 +15,11 @@ end
 
 local unfinished = true
 local currentZone
-
+while _G.loop do
 require(ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier = function(...)
     return 50
 end
-while _G.loop do
+
 local function teleportToMaxZone()
     local zoneName, maxZoneData = require(ReplicatedStorage.Library.Client.ZoneCmds).GetMaxOwnedZone()
     while currentZone == zoneName do
