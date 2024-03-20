@@ -24,8 +24,6 @@ local mapFolder = game.PlaceId == 8737899170 and workspace.Map or game.PlaceId =
 local worldName = mapFolder.Name == "Map" and "World 1" or mapFolder.Name == "Map2" and "World 2"
 local worldCurrency if worldName == "World 1" then worldCurrency = "Coins" elseif worldName == "World 2" then worldCurrency = "TechCoins" end
 local eggLocal = getsenv(Player.PlayerScripts.Scripts.Game["Egg Opening Frontend"])
-_G.loop = true
-_G.loopDelay = 15
 while _G.loop do
 hookfunction(eggLocal.PlayEggAnimation, function() return end)
 hookfunction(require(game.ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier, function() return 2500 end)
