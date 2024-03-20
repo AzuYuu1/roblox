@@ -1,17 +1,6 @@
 task.spawn(function()
     while task.wait(1.5) do
---[[
 
-
-
-made by @nazov on discord :)
-
-fork if you want just don't 
-resell this script u loser!!
-
-
-
-]]
 repeat task.wait(1) until game.PlaceId ~= nil
 repeat task.wait(1) until game:GetService("Players") and game:GetService("Players").LocalPlayer
 repeat task.wait(1) until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("__INTRO")
