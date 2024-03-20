@@ -1,34 +1,6 @@
-game:GetService("RunService"):Set3dRenderingEnabled(false)
-
 repeat
     task.wait()
 until game:IsLoaded()
-
-
-local virtualuser = game:GetService("VirtualUser")
-game:GetService("Players").LocalPlayer.Idled:Connect(function()
-    virtualuser:CaptureController()
-    virtualuser:ClickButton2(Vector2.new())
-end)
-game.Players.LocalPlayer.PlayerScripts.Scripts.Core["Idle Tracking"].Enabled = false
-game.Players.LocalPlayer.PlayerScripts.Scripts.Core["Server Closing"].Enabled = false
-
-
-local Model = workspace
-local ClassTypes = {
-	"Decal",
-	"Texture",
-        "Important",
-	"Terrain",
-        "Ground"
-}
-
-for _, v in ipairs(workspace:GetDescendants()) do
-	if table.find(ClassTypes, v.ClassName) then
-		print(v.ClassName)
-		v:Destroy()
-	end
-end
 
 local Workspace = game:GetService("Workspace")
 local Terrain = Workspace:WaitForChild("Terrain")
