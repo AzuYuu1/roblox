@@ -1,5 +1,6 @@
 _G.loop = true
 _G.loopDelay = 15
+while _G.loop do
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Workspace = game:GetService("Workspace")
@@ -18,7 +19,6 @@ local currentZone
 require(ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier = function(...)
     return 1000
 end
-while _G.loop do
 local function teleportToMaxZone()
     local zoneName, maxZoneData = require(ReplicatedStorage.Library.Client.ZoneCmds).GetMaxOwnedZone()
     while currentZone == zoneName do
