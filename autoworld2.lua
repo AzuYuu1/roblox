@@ -27,7 +27,7 @@ _G.loop = true
 _G.loopDelay = 15
 while _G.loop do
 hookfunction(eggLocal.PlayEggAnimation, function() return end)
-hookfunction(require(game.ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier, function() return 500 end)
+hookfunction(require(game.ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier, function() return 50 end)
 --
 for k,v in getconnections(Player.Idled) do
 	v:Disable()
