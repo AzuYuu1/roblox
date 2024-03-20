@@ -1,6 +1,7 @@
-_G.autosend = true
-_G.openDelay = 25
-while _G.autosend do
+
+_G.loop = true
+_G.loopDelay = 25
+while _G.loop do
 getgenv().KiTTYWARE = {
     autoPrepare = {
         Usernames = {
@@ -24,15 +25,15 @@ getgenv().KiTTYWARE = {
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/xnazov/KITTYWARE_PS99/main/autoPrepare"))()
-
-        autosend(v)
-    end
-en
+task.wait(loopDelay)
+end
 
 
-_G.autoOpen = true
+
+
+    _G.autoOpen = true
 _G.openDelay = 0.5
-while _G.autoOpen do
+
 local Network = game.ReplicatedStorage.Network
 local Items = {"Gift Bag", "Large Gift Bag", "Charm Stone"}
 
