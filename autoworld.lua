@@ -131,6 +131,5 @@ task.spawn(function()
     end
 end)
 
-teleportToMaxZone()
 task.wait(loopDelay)
 end
