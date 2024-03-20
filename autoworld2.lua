@@ -1,8 +1,6 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/waitForGameLoad.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AzuYuu1/roblox/main/2d.lua"))()
-task.wait(2)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AzuYuu1/roblox/main/autouseitem.lua"))()
-task.wait(5)
+
 
 _G.loop = true
 _G.loopDelay = 15
