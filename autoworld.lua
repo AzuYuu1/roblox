@@ -130,6 +130,6 @@ task.spawn(function()
         task.wait(getgenv().autoWorldConfig.PURCHASE_CHECK_DELAY)
     end
 end)
-
+teleportToMaxZone()
 task.wait(loopDelay)
 end
