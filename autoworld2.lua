@@ -1,5 +1,6 @@
-task.spawn(function()
-    while task.wait(1.5) do
+_G.loop = true
+_G.loopDelay = 5
+while _G.loop do
 
 repeat task.wait(1) until game.PlaceId ~= nil
 repeat task.wait(1) until game:GetService("Players") and game:GetService("Players").LocalPlayer
@@ -281,7 +282,5 @@ while getgenv().config.autoWorld do task.wait()
 	end
 end
             
-            
-            task.wait(2)
-    end
-end)
+task.wait(loopDelay)
+end
