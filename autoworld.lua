@@ -1,6 +1,6 @@
 _G.loop = true
 _G.loopDelay = 15
-
+while _G.loop do
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Workspace = game:GetService("Workspace")
@@ -15,7 +15,7 @@ end
 
 local unfinished = true
 local currentZone
-while _G.loop do
+
 require(ReplicatedStorage.Library.Client.PlayerPet).CalculateSpeedMultiplier = function(...)
     return 50
 end
